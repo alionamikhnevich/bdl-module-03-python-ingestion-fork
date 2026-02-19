@@ -102,7 +102,7 @@ def main():
         "results": test_results
     }
     
-    with open(test_results_dir / 'results.json', 'w', encoding='utf-8') as f:
+    with open(test_results_dir / 'results.xml', 'w', encoding='utf-8') as f:
         json.dump(results_data, f, indent=2, ensure_ascii=False)
     
     print(f"Test completed: {results_data['passed']}/{results_data['total_tests']} passed")
