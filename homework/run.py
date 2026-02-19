@@ -9,7 +9,7 @@ from datetime import datetime
 def check_python_lessons():
     """Check Python lesson files."""
     import os
-    homework_dir = Path(os.path.join(os.getcwd(), 'homework'))
+    homework_dir = Path(os.getcwd())
     test_results = []
     
     # Find student solutions

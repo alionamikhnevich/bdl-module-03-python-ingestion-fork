@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-02-19T08:42:04.301162",
+  "total_tests": 2,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "results": [
+    {
+      "name": "lesson_1",
+      "status": "passed",
+      "message": "All required variables present: category_a, category_b, total_value",
+      "details": {
+        "category_a": "Fruits",
+        "category_b": "Vegetables",
+        "total_value": "7200.0"
+      }
+    },
+    {
+      "name": "lesson_2",
+      "status": "passed",
+      "message": "All required variables present: data_processed, transformation_applied",
+      "details": {
+        "data_processed": "[{'name': 'Product C', 'price': 200.0, 'category': 'electronics', 'discounted_price': 180.0}, {'name': 'Product A', 'price': 100.0, 'category': 'electronics', 'discounted_price': 90.0}]",
+        "transformation_applied": "True"
+      }
+    }
+  ]
+}
