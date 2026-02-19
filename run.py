@@ -81,15 +81,15 @@ def check_python_lessons():
 
 def main():
     """Main function to run all tests."""
+    import os
+    test_results_dir = Path(os.environ.get('RESULTS_DIR', '/mnt/results'))
+    test_results_dir.mkdir(exist_ok=True)
+    
     test_results = []
     
     # Check Python lesson files
     python_results = check_python_lessons()
     test_results.extend(python_results)
-    
-    # Create TestResults directory
-    test_results_dir = Path('TestResults')
-    test_results_dir.mkdir(exist_ok=True)
     
     # Save results to JSON
     results_data = {
