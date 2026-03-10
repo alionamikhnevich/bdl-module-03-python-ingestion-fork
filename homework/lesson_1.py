@@ -1,16 +1,40 @@
-# Инициализация переменных с ошибочными значениями категорий и атрибутами товара
-category_a = "Vegetables"  # Ошибочно присвоено фруктам
-category_b = "Fruits"      # Ошибочно присвоено овощам
-price_per_unit_a = 150      # Цена за ящик партии фруктов
-quantity_a = 40             # Количество ящиков партии фруктов
-vat_rate = 0.2              # Ставка НДС 20%
+"""
+Lesson 1
+Исправление категорий товаров и расчёт стоимости партии с НДС
+"""
 
-# Обмен значений категорий без использования временной переменной
+# --- Константы ---
+VAT_RATE = 0.2
+
+# Инициализация переменных (категории перепутаны намеренно)
+category_a = "Vegetables"
+category_b = "Fruits"
+
+price_per_unit_a = 150
+quantity_a = 40
+
+
+def calculate_total_value(price_per_unit: float, quantity: int, vat_rate: float) -> float:
+    """
+    Рассчитывает стоимость партии с НДС.
+    """
+    subtotal = price_per_unit * quantity
+    total = subtotal * (1 + vat_rate)
+    return total
+
+
+# --- Исправление категорий ---
 category_a, category_b = category_b, category_a
 
-# Расчёт общей стоимости партии с НДС
-total_value = (price_per_unit_a * quantity_a) + (price_per_unit_a * quantity_a * vat_rate)
 
-# Вывод исправленной категории и итоговой стоимости
-print("Текущая категория A:", category_a)
-print("Общая стоимость партии с НДС:", total_value)
+# --- Расчёт итоговой стоимости ---
+total_value = calculate_total_value(price_per_unit_a, quantity_a, VAT_RATE)
+
+
+def main():
+    print("Текущая категория A:", category_a)
+    print("Общая стоимость партии с НДС:", total_value)
+
+
+if __name__ == "__main__":
+    main()
